@@ -3,6 +3,6 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import { config } from "./appConfig";
 
-firebase.initializeApp(config.firebase);
+// firebase.initializeApp(config.firebase);
 
-export const fireStore = firebase.firestore();
+export default firebase.initializeApp(config.firebase);
