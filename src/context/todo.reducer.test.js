@@ -1,4 +1,4 @@
-import { SET_TODOS, ADD_TODO } from "./todo.actions";
+import { SET_TODOS, ADD_TODO, DELETE_TODO, UPDATE_TODO } from "./todo.actions";
 import { todoReducer } from "./todo.reducer";
 
 describe("todo.reducer", () => {
@@ -28,6 +28,31 @@ describe("todo.reducer", () => {
         0: {
           description: "new todo!",
         },
+      },
+    });
+  });
+
+  it("should remove data from state.todos for type DELETE_TODO", () => {
+    const mockState = { todos: { 0: { description: "new todo!" }} };
+    const mockAction = {
+      type: DELETE_TODO,
+      data: { id: 0 },
+    };
+    expect(todoReducer(mockState, mockAction)).toEqual({
+      todos: {},
+    });
+  });
+
+  it("should update data from state.todos for type UPDATE_TODO", () => {
+    const mockState = { todos: { 0: { description: "new todo!" } } };
+    const mockAction = {
+      type: UPDATE_TODO,
+      data: { id: 0, description: "updated value!" },
+    };
+    expect(todoReducer(mockState, mockAction)).toEqual({
+      todos: {
+        id: 0, 
+        description: "updated value!" 
       },
     });
   });
