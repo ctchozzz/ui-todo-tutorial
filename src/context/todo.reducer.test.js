@@ -51,8 +51,9 @@ describe("todo.reducer", () => {
     };
     expect(todoReducer(mockState, mockAction)).toEqual({
       todos: {
-        id: 0, 
-        description: "updated value!" 
+         0: {
+          description: "updated value!" 
+         }
       },
     });
   });

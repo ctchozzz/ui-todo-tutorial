@@ -12,7 +12,7 @@ export const deleteTodo = (id) => ({
   type: DELETE_TODO,
   data: {id},
 });
-export const updateTodo = (id, update) => ({
+export const updateTodo = (id, description) => ({
   type: UPDATE_TODO,
-  data: {id, update},
+  data: { id, description},
 });
