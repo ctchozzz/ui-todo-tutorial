@@ -21,6 +21,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
+    "start:test": "env-cmd -f .env.test npm start",
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
     "cypress:open": "cypress open"
