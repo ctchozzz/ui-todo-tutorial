@@ -37,11 +37,8 @@ jobs:
       - name: Run end-to-end cypress test
         uses: cypress-io/github-action@v1
         with:
-          start: npm start
+          start: npm run start
           browser: chrome
-        env:
-          # pass GitHub token to allow accurately detecting a build vs a re-run build
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # TODO: Add a stage to generate cypress videos and screenshots as artifacts
       - name: Create cypress screenshots artifact
